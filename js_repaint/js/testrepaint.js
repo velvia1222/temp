@@ -6,13 +6,16 @@ $('#execute').click(function() {
 	finishmsg.text("");
 
 	setTimeout(function exec() {
-		if (cnt >= 3) {
+		if (cnt >= 33) {
 			finishmsg.text("完了！");
 			return;
 		}
 
-		sleep(1000);
-		processmsg.text((++cnt) + "件！");
+		sleep(200);
+		cnt++;
+		if (cnt % 10 === 0) {
+			processmsg.text((cnt) + "件！");
+		}
 		setTimeout(exec);
 	});
 });
